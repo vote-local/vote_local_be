@@ -6,12 +6,12 @@ addons:
 script:
 - bundle exec rails db:{create,migrate} RAILS_ENV=test
 - bundle exec rspec
-deploy:
-  provider: heroku
-  api_key:
-    secure: pdqz+ujy3opcEiTYdbKIaBlz+WJN/EQefg9oL6bg7vtZbegQZkvd7ZMGr/6mbdyWG+PEEayAHWNcW4RdfGPzdVKZ/aChnK70bnbJOWPShy7y+31c7CnA95/w6abCfWzqg7EqjgIRv8legR7xmi8WVRAe9LMoTw7f59UBXIirev5qzetkSnt92/LQY3ta8zQXQ50hMwur6+usmRvZSk8Ydq9+T42mXJzG+Mtdtpt+q4fBV44y3s/LFDreRtKm0HqhheDcdiFUczePfDM9dm3er2tcuneuQXjIiFmD9U3yzZCdB1pLONwYV1ipF6oFmUlkLEML15Z+hTCeDuPV7zoo262ZWO22rusVN8Wr4uco0x/W8X3aToVQsf88Y8/Z1q5eRtxnFnMeWDuLwdxqA2CmgIPrcB+CBknPdLaTXBtj6AIJ3y2tUTe6LqoRFzLLTMM0ERMKUF603Vnwt+zE/8et4LHlFRMroaw5SdeUOPVbMZzKNhPwn9MMo3bczYm1EJXj5bVnvYeFjUxyDY659Svz9DEly9TSrvUY77II+bEtG5shcUmcR2RTYzxYxLuBzL5sCI2XgcZEetMla9z3F+T6+1Qm40TvuzICCynLyJCBZLfN2tgbVwinsHL00fuIluLhqr+OvYUuxnxqihuvpI8BrXcAdxjizs9W1/0aD0CJUqs=
-  app:
-  run: rails db:migrate
-
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: pdqz+ujy3opcEiTYdbKIaBlz+WJN/EQefg9oL6bg7vtZbegQZkvd7ZMGr/6mbdyWG+PEEayAHWNcW4RdfGPzdVKZ/aChnK70bnbJOWPShy7y+31c7CnA95/w6abCfWzqg7EqjgIRv8legR7xmi8WVRAe9LMoTw7f59UBXIirev5qzetkSnt92/LQY3ta8zQXQ50hMwur6+usmRvZSk8Ydq9+T42mXJzG+Mtdtpt+q4fBV44y3s/LFDreRtKm0HqhheDcdiFUczePfDM9dm3er2tcuneuQXjIiFmD9U3yzZCdB1pLONwYV1ipF6oFmUlkLEML15Z+hTCeDuPV7zoo262ZWO22rusVN8Wr4uco0x/W8X3aToVQsf88Y8/Z1q5eRtxnFnMeWDuLwdxqA2CmgIPrcB+CBknPdLaTXBtj6AIJ3y2tUTe6LqoRFzLLTMM0ERMKUF603Vnwt+zE/8et4LHlFRMroaw5SdeUOPVbMZzKNhPwn9MMo3bczYm1EJXj5bVnvYeFjUxyDY659Svz9DEly9TSrvUY77II+bEtG5shcUmcR2RTYzxYxLuBzL5sCI2XgcZEetMla9z3F+T6+1Qm40TvuzICCynLyJCBZLfN2tgbVwinsHL00fuIluLhqr+OvYUuxnxqihuvpI8BrXcAdxjizs9W1/0aD0CJUqs=
+#   app:
+#   run: rails db:migrate
+# 
 
 dist: trusty 
