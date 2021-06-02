@@ -5,7 +5,8 @@ addons:
   postgresql: 9.6
 script:
 # - bundle exec rails db:{create,migrate} RAILS_ENV=test
-- db:test:prepare
+- rake db:schema:load
+# - db:test:prepare
 - bundle exec rspec
 services:
   - postgresql
