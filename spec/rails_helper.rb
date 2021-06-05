@@ -72,8 +72,7 @@ RSpec.configure do |config|
     config.hook_into :webmock
     config.filter_sensitive_data('<key>') { ENV['GOOGLE_CIVICS_API_KEY'] }
     config.default_cassette_options = {
-      re_record_interval: 30.days,
-      match_requests_on: [:method, :uri, :query]
+      re_record_interval: 30.days
      }
     config.configure_rspec_metadata!
   end
