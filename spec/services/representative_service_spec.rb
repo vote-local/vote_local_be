@@ -10,6 +10,7 @@ RSpec.describe RepresentativeService do
 
     response[:offices].each do |office|
       expect(office[:name]).to be_a(String)
+      expect(office[:roles]).to be_a(Array) if office[:roles] !=nil
       expect(office[:officialIndices]).to be_a(Array)
     end
 
@@ -19,19 +20,14 @@ RSpec.describe RepresentativeService do
       expect(official[:name]).to be_a(String)
       expect(official[:party]).to be_a(String)
       expect(official[:urls]).to be_a(Array)
+      expect(official[:photoUrl]).to be_a(String) if official[:photoUrl] !=nil
       expect(official[:urls][0]).to be_a(String)
-
       if official[:channels] != nil
         expect(official[:channels]).to be_a(Array)
-        # twitter = data[:officials].map do |official|
-        #       if official[:channels] != nil
-        #         handle = official[:channels].find do |channel|
-        #           channel[:type] == "Twitter"
-        #         end
-        #         handle
-        #       end
-        #     end
-      #   end
+        handle = official[:channels].find do |channel|
+          channel[:type] == "Twitter"
+        end
+        expect(handle[:id]).to be_a(String) if handle != nil
       end
     end
   end
