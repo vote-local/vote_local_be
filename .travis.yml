@@ -1,9 +1,4 @@
 language: ruby
-rvm:
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
 rbenv:
 - 2.5.3
 addons:
@@ -21,4 +16,4 @@ deploy:
   on:
     repo: vote-local/vote_local_be
     branch: main
-  skip_cleanup: 'true'
+    cleanup: 'true'
