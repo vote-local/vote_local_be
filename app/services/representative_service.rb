@@ -22,7 +22,6 @@ class RepresentativeService
           'subLocality2'
         ]
       end
-      require "pry"; binding.pry
       parse_data(response)
     end
 
