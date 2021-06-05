@@ -10,7 +10,6 @@ RSpec.describe RepresentativeService do
 
     response[:offices].each do |office|
       expect(office[:name]).to be_a(String)
-      expect(office[:roles]).to be_a(Array) if office[:roles] !=nil
       expect(office[:officialIndices]).to be_a(Array)
     end
 
