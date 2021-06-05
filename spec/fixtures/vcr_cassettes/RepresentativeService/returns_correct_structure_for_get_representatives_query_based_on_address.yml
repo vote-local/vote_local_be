@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://www.googleapis.com/civicinfo/v2/representatives?address=99%20E.%20Arizona%20St,%20Denver%20CO%2080210&key=<key>&levels=subLocality2
+    uri: https://www.googleapis.com/civicinfo/v2/representatives?address=99+E.+Arizona+St%2C+Denver+CO+80210&key=AIzaSyC9w8Y07oSuxYKfTxHjMg4JRHR0OS0n0oo&levels=administrativeArea1&levels=administrativeArea2&levels=locality&levels=regional&levels=special&levels=subLocality1&levels=subLocality2
     body:
       encoding: US-ASCII
       string: ''
