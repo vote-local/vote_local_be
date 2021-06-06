@@ -1,0 +1,32 @@
+{
+      "name": "Jared Polis",
+      "address": [
+        {
+          "line1": "200 East Colfax Avenue",
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80203"
+        }
+      ],
+      "party": "Democratic Party",
+      "phones": [
+        "(303) 866-2471"
+      ],
+      "urls": [
+        "https://www.colorado.gov/governor/"
+      ],
+      "emails": [
+        "governorpolis@state.co.us"
+      ],
+      "channels": [
+        {
+          "type": "Facebook",
+          "id": "jaredpolis"
+        },
+        {
+          "type": "Twitter",
+          "id": "jaredpolis"
+        }
+      ]
+    }
+   

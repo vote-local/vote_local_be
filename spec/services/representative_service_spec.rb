@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe RepresentativeService do
   it "returns correct structure for get representatives query based on address", :vcr do
-    address = "99 E. Arizona St, Denver CO 80210"
+    address = "1331 17th Street, Denver CO 80202"
     response = RepresentativeService.get_representatives_by_address(address)
     expect(response).to be_a(Hash)
     expect(response[:offices]).to be_a(Array)
@@ -10,7 +10,6 @@ RSpec.describe RepresentativeService do
 
     response[:offices].each do |office|
       expect(office[:name]).to be_a(String)
-      expect(office[:roles]).to be_a(Array) if office[:roles] !=nil
       expect(office[:officialIndices]).to be_a(Array)
     end
 
