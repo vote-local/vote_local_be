@@ -47,4 +47,20 @@ RSpec.describe "Representatives Internal API", type: :request do
       end
     end
   end
+
+  describe "sad path" do
+
+    it "returns error if address is empty", :vcr do
+      address = ""
+      get "/api/v1/representatives?address=#{address}"
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
+
+    it "returns error if no address parameter is given", :vcr do
+      get "/api/v1/representatives?"
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+    end
+  end
 end
