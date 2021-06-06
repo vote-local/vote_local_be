@@ -4,6 +4,7 @@ class RepresentativeService
     def get_representatives_by_address(address)
       response = conn.get("representatives") do |req|
         req.params['address'] = address
+        req.options.params_encoder = Faraday::FlatParamsEncoder
         req.params['levels'] = [
           'administrativeArea1',
           'administrativeArea2',
