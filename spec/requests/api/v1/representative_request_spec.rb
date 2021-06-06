@@ -16,7 +16,7 @@ RSpec.describe "Representatives Internal API", type: :request do
 
       representatives[:data].each do |representative|
         expect(representative).to have_key(:id)
-        expect(representative[:id]).to be_a(String)
+        expect(representative[:id]).to eq(nil)
 
         expect(representative).to have_key(:type)
         expect(representative[:type]).to be_a(String)
@@ -27,14 +27,14 @@ RSpec.describe "Representatives Internal API", type: :request do
         expect(representative[:attributes]).to have_key(:office_name)
         expect(representative[:attributes][:office_name]).to be_a(String)
 
-        expect(representative[:attributes]).to have_key(:representative_name)
-        expect(representative[:attributes][:representative_name]).to be_a(String)
+        expect(representative[:attributes]).to have_key(:name)
+        expect(representative[:attributes][:name]).to be_a(String)
 
         expect(representative[:attributes]).to have_key(:party)
         expect(representative[:attributes][:party]).to be_a(String)
 
-        expect(representative[:attributes]).to have_key(:urls)
-        expect(representative[:attributes][:urls]).to be_a(String)
+        expect(representative[:attributes]).to have_key(:url)
+        expect(representative[:attributes][:url]).to be_a(String)
 
         expect(representative[:attributes]).to have_key(:photo_url)
         expect(representative[:attributes][:photo_url]).to be_a(String)
