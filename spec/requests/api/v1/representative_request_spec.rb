@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "Representatives Internal API", type: :request do
   describe "happy path" do
 
-    xit "returns information representatives" do
+    it "returns information representatives" do
 
-      address = "2000 16th St, Denver CO"
-      get "/api/v1/representatives?#{address}"# add address
+      address = "1331 17th Street, Denver CO 80202"
+      get "/api/v1/representatives?address=#{address}"
 
       response = JSON.parse(response, symbolize_names: true)
 

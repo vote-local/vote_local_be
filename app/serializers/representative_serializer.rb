@@ -1,4 +1,4 @@
 class RepresentativeSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :party, :urls, :photoUrl
+  attributes :name, :party, :url, :photoUrl
 end
