@@ -17,11 +17,16 @@ class Representative
   end
 
   def twitter(data)
-    if data[:channels] != nil
-      handle = data[:channels].find do |channel|
-        channel[:type] == "Twitter"
+    if data[:channels]
+      data[:channels].find do |channel|
+        if channel[:type] == "Twitter"
+          channel[:id]
+        else
+          "not found"
+        end
       end
-      handle[:id]
+    else
+      "not found"
     end
   end
 end
