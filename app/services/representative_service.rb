@@ -25,7 +25,7 @@ class RepresentativeService
         params: {
           "key" => "#{ENV['GOOGLE_CIVICS_API_KEY']}"
           })
-        end
+    end
 
     def parse_data(response)
       JSON.parse(response.body, symbolize_names: true)
