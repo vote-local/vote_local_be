@@ -3,13 +3,15 @@ class Representative
               :party,
               :url,
               :photoUrl,
-              :id
+              :id,
+              :office_name
 
   def initialize(data)
-    @id = data[:index]
+    @id = nil
     @name = data[:name]
     @party = data[:party]
     @url = data[:urls]
     @photoUrl = data[:photoUrl]
+    @office_name = data[:office_name]
   end
 end
