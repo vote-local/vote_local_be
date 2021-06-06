@@ -3,14 +3,15 @@ require 'rails_helper'
 RSpec.describe "Representatives Internal API", type: :request do
   describe "happy path" do
 
-    it "returns information representatives" do
+    it "returns representatives when address is given", :vcr do
+      respresentative_1 = Representative.new(name: "best one", party: "funny party", url: ["www.winner.com"], photoUrl: "", id: "200")
 
       address = "1331 17th Street, Denver CO 80202"
       get "/api/v1/representatives?address=#{address}"
 
-      response = JSON.parse(response, symbolize_names: true)
-
       expect(response).to be_successful
+
+      response = JSON.parse(@response.body, symbolize_names: true)
 
       expect(response).to be_a(Hash)
       expect(response[:data]).to be_a(Array)
