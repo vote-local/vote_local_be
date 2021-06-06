@@ -6,7 +6,7 @@ class Representative
               :id
 
   def initialize(data)
-    @id = rand(1..5000)
+    @id = data[:index]
     @name = data[:name]
     @party = data[:party]
     @url = data[:urls]

@@ -19,7 +19,6 @@ class RepresentativeService
     end
 
   private
-
     def conn
       Faraday.new(
         url: 'https://www.googleapis.com/civicinfo/v2',
