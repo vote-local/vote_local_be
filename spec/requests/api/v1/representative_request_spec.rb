@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Representatives Internal API", type: :request do
-  describe "happy path" do
-
-    it "returns representatives when address is given", :vcr do
-      address = "1331 17th Street, Denver CO 80202"
+RSpec.describe 'Representatives Internal API', type: :request do
+  describe 'happy path' do
+    it 'returns representatives when address is given', :vcr do
+      address = '1331 17th Street, Denver CO 80202'
       get "/api/v1/representatives?address=#{address}"
 
       expect(response).to be_successful
@@ -48,17 +49,16 @@ RSpec.describe "Representatives Internal API", type: :request do
     end
   end
 
-  describe "sad path" do
-
-    it "returns error if address is empty", :vcr do
-      address = ""
+  describe 'sad path' do
+    it 'returns error if address is empty', :vcr do
+      address = ''
       get "/api/v1/representatives?address=#{address}"
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
     end
 
-    it "returns error if no address parameter is given", :vcr do
-      get "/api/v1/representatives?"
+    it 'returns error if no address parameter is given', :vcr do
+      get '/api/v1/representatives?'
       expect(response).to_not be_successful
       expect(response.status).to eq(404)
     end
