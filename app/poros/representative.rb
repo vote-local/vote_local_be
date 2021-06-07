@@ -13,20 +13,16 @@ class Representative
     @name = data[:name]
     @party = data[:party]
     @url = data[:urls][0]
-    @photo_url = data[:photoUrl] || "no photo found"
+    @photo_url = data[:photoUrl] || 'no photo found'
     @office_name = data[:office_name]
     @twitter_handle = twitter(data)
-    @api_id = "#{data[:address][0][:zip]}#{data[:name].delete(" ")}"
+    @api_id = "#{data[:address][0][:zip]}#{data[:name].delete(' ')}"
   end
 
   def twitter(data)
-    handle = "not found"
-    if data[:channels]
-      data[:channels].each do |channel|
-        if channel[:type] == "Twitter"
-          handle = channel[:id]
-        end
-      end
+    handle = 'not found'
+    data[:channels]&.each do |channel|
+      handle = channel[:id] if channel[:type] == 'Twitter'
     end
     handle
   end

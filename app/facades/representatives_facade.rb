@@ -1,6 +1,5 @@
 class RepresentativesFacade
   class << self
-
     def fetch_representative_data(address)
       data ||= RepresentativeService.get_representatives_by_address(address)
     end
@@ -9,14 +8,11 @@ class RepresentativesFacade
       data = fetch_representative_data(address)
       representatives = []
       data[:officials].each_with_index do |official, index|
-        if official[:office_name] == nil
-          data[:offices].each do |office|
-            if office[:officialIndices].include?(index)
-              official[:office_name] = office[:name]
-            end
-          end
-          representatives << Representative.new(official)
+        next unless official[:office_name].nil?
+        data[:offices].each do |office|
+          official[:office_name] = office[:name] if office[:officialIndices].include?(index)
         end
+        representatives << Representative.new(official)
       end
       representatives
     end
