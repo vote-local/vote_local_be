@@ -5,7 +5,8 @@ class Representative
               :photo_url,
               :id,
               :office_name,
-              :twitter_handle
+              :twitter_handle,
+              :api_id
 
   def initialize(data)
     @id = nil
@@ -15,6 +16,7 @@ class Representative
     @photo_url = data[:photoUrl] || "no photo found"
     @office_name = data[:office_name]
     @twitter_handle = twitter(data)
+    @api_id = "#{data[:address][0][:zip]}#{data[:name].delete(" ")}"
   end
 
   def twitter(data)
