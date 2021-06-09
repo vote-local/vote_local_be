@@ -43,6 +43,18 @@ describe 'RepresentativesFacade', :vcr do
 
     expect(representatives[6].name).to eq('Monica M. Márquez')
     expect(representatives[6].party).to eq('Nonpartisan')
+    expect(representatives[6].api_id).to eq('80203MonicaMMárquez')
     expect(representatives[6].office_name).to eq('CO Supreme Court Justice')
+  end
+
+  it 'it cleans the api_id for reps with special characters in name' do
+    address = '1331 17th Street, Denver CO 80202'
+    representatives = RepresentativesFacade.get_representatives(address)
+
+
+    expect(representatives[6].api_id).to eq('80203MonicaMMárquez')
+    expect(representatives[8].api_id).to eq('80203BrianDBoatright')
+    expect(representatives[9].api_id).to eq('80203MariaEBerkenkotter')
+    expect(representatives[10].api_id).to eq('80203CarlosASamourJr')
   end
 end

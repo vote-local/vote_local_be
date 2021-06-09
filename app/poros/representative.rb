@@ -16,7 +16,7 @@ class Representative
     @photo_url = data[:photoUrl] || avatar_url
     @office_name = data[:office_name]
     @twitter_handle = twitter(data)
-    @api_id = "#{data[:address][0][:zip]}#{data[:name].delete(' ').gsub(/[!@%&".]/,'')}"
+    @api_id = "#{data[:address][0][:zip]}#{data[:name].delete(' ').gsub(/[!@%&",.]/,'')}"
   end
 
   def twitter(data)
