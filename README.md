@@ -22,8 +22,6 @@ Navigate to http://localhost:3000
 ## API Endpoint Examples
 GET Representatives Endpoint [JSON example](https://www.postman.com/collections/61c4f82d8f0acfe7cb94)
 
-## Database
-![Vote_Local_DB](https://user-images.githubusercontent.com/24997456/121625522-da060280-ca30-11eb-83cb-2fcb60ff9174.jpg)
 
 ## Technologies
 - Framework: Ruby on Rails
